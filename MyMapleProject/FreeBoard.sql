@@ -1,0 +1,20 @@
+create table FreeBoard(
+num int auto_increment primary key,
+category varchar(30),
+userName varchar(50),
+userTitle varchar(50),
+userId varchar(50),
+userPassword varchar(50),
+userNickName varchar(50),
+BoardContent text,
+wtime timestamp not null default current_timestamp,
+hit int default 0,
+Recommend int default 0,
+fuckRecommend int default 0,
+img_file varchar(50),
+pub_file1 varchar(50),
+pub_file2 varchar(50),
+comment int default 0,
+img_file1 varchar(50),
+boardcategory varchar(50) default "자유게시판"
+);

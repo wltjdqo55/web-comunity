@@ -1,0 +1,50 @@
+package com.inven.project.command;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.inven.project.DAO.FreeBoardDAO;
+import com.inven.project.DAO.ReplyDAO;
+import com.inven.project.DTO.FreeBoardDTO;
+import com.inven.project.DTO.ReplyDTO;
+
+public class board_Free_ReCommandCommand implements Command {
+
+	@Override
+	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ReplyDAO dao = ReplyDAO.getReplyDAO();
+	    ReplyDTO dto = new ReplyDTO();
+	    request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		dto.setReplyId(request.getParameter("userId"));
+		dto.setReplyNickName(request.getParameter("userNickName"));
+		dto.setReplyPassword(request.getParameter("userPassword"));
+		dto.setReplytext(request.getParameter("userContent"));
+		dto.setReplyName(request.getParameter("userName"));
+//		dto.setBnum(Integer.parseInt(request.getParameter("num")));
+		dto.setNum(Integer.parseInt(request.getParameter("num")));
+		
+//		int bnum = Integer.parseInt(request.getParameter("num"));
+//		int comment = Integer.parseInt(request.getParameter("comment"));
+//		
+//		daoo.countUpdate(comment, bnum);
+			
+		
+		dao.WriteReply(dto);
+		request.setAttribute("result", 0);
+//		ArrayList<ReplyDTO> replylist = dao.ListreplyDAO(dto.getNum());
+//		request.setAttribute("replylist", replylist);
+		
+		
+		
+		
+	}
+
+}
