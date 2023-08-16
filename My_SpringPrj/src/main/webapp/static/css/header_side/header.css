@@ -1,0 +1,154 @@
+@charset "UTF-8";
+	
+	body{margin: 0;padding : 0; width:100vw; height: auto; margin-bottom: 150px;background-image: url('header_side_image/메이플 배경이미지2.jpg'); background-size: 100% 100%; background-repeat: no-repeat; background-position: 0% 100%;
+background-attachment: fixed;
+background-gradient: rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%;}
+	
+	/*헤더영역*/
+	.container_header{height: 30vh; display: flex; width: 80vw; margin-left: 10%;}
+	.container_header_left{float: left; margin-left: 50px; width:18vw; margin-top:40px;} 
+	.container_header_right{float:right; width: 62vw; height: 25vh;}
+	.header_right_Img{width:100%; height: 100%; margin-top: 10px;}
+	.header_left_Img{width:14vw; height: 12vh;}
+	.header_left_h1{margin-bottom: 100px;}
+	
+	/*상단 메뉴바*/
+	.container_top_menubar {
+			position:relative;
+			margin-left:10%;
+			background-color: #eee;
+			height: 70px;
+			width: 80vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+		}
+
+		.top_menubar {
+			position:relative;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+		}
+
+		.top_menu {
+			position: relative;
+			margin-right: 10px;
+			padding: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+			list-style: none;
+			width: 14.4vw;
+			z-index: 10;
+		}
+
+		.top_menu:hover {
+			position:relative;
+			background-color: #ddd;
+			z-index: 10;
+		}
+
+		.top_menu a {
+			position:relative;
+			color: #333;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			z-index: 10;
+		}
+
+		/* sub-menu styles */
+		.Maple_Job,
+		.Infomation_Board,
+		.submenu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+			z-index: 1;
+			padding: 10px;
+		}
+
+		.top_menu:hover .Maple_Job,
+		 .top_menu:hover .Infomation_Board,
+		 .top_menu:hover .submenu {
+			display: block;
+		}
+
+		.top_menu_li {
+			position:relative;
+			padding: 5px 0;
+			font-size: 18px;
+			font-weight: bord;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+			width: 14.4vw;
+			height: 40px;
+			list-style-type: none;
+			z-index: 3;
+			
+		}
+
+		.top_menu_li:hover {
+			background-color: #A9A9A9;
+		}
+
+		.top_menu_li a {
+			color: #333;
+			text-decoration: none;
+			display: block;
+		}
+
+		/* recommended hunting grounds link */
+		.top_menu:last-child {
+			margin-right: 0;
+			
+		}
+
+		.top_menu:last-child a {
+			padding-right: 0;
+		}
+
+		/* responsive styles */
+		@media screen and (max-width: 768px) {
+			.top_menu {
+				font-size: 14px;
+				width: 100%;
+			}
+
+			.top_menu a {
+				padding: 5px;
+			}
+
+			.top_menu_li {
+				font-size: 12px;
+				list-style-type: none;
+			}
+
+			.container_top_menubar {
+				height: auto;
+			}
+
+			.top_menubar {
+				flex-wrap: wrap;
+			}
+
+			.top_menu {
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+		}
+		
+ 		

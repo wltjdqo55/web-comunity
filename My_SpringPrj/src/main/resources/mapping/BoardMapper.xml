@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO boardTable(name, title, content) values(#{name}, #{title}, #{content})
+	</insert>
+	
+	<select id="listBoard" resultType="board">
+		SELECT * FROM boardTable order by NUM DESC;
+	</select>
+	<select id="searchBoard" resultType="board">
+	    SELECT * FROM boardTable WHERE 1=1
+	    <if test="category == 'title'">
+	        AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%')
+	    </if>
+	    <if test="category == 'name'">
+	        AND NAME LIKE CONCAT('%', #{searchKeyword}, '%')
+	    </if>
+	    <if test="category == 'titleAndContent'">
+	        AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%') OR CONTENT LIKE CONCAT('%', #{searchKeyword}, '%')
+	    </if>        
+	    ORDER BY NUM DESC;
+	</select>
+
+	<select id="contentView" resultType="board">
+		SELECT * FROM boardTable where NUM = #{num}
+	</select>
+	
+	<update id="updateBoard">
+		UPDATE boardTable SET name = #{name}, title = #{title}, content = #{content} WHERE NUM = #{num}
+	</update>
+	
+	<delete id="deleteBoard">
+		DELETE FROM boardTable where NUM = #{num}
+	</delete>
+	
+	<delete id="deleteItems">
+		DELETE FROM bOARDtABLE where NUM = #{num}
+	</delete>
+	
+	
+	
+	
+</mapper>

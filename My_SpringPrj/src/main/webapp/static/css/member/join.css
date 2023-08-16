@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+	body{width: 80%; margin:0; padding:0; margin: 0 auto; height: 800px;}
+	.container{width: 70%; margin: 0 auto; text-align: center; margin-top: 100px; height: 550px; border: 1px solid #e0e0e0;}
+	table{margin: 0 auto; text-align: left; background-color : #F5F5F5; border: 1px solid #DDD; padding: 15px;}
+	.join_p{font-size: 24px; color: #5F9EA0; font-weight: bold;}
+	.lefttd{width: 150px;}
+	tr{height: 40px;}
+	input{height: 30px; background-color: #FFFFFF; border:none;}
+	.userID, .nickName{width: 300px;}
+	.userNickname{width:72%;}
+	.userID_btn, .userNickname_btn{padding: 8px;background-color: #B0C4DE; color: white; font-size:15px; border: none; border-radius : 5px; cursor: pointer;}
+	.userID_btn:hover, .userNickname_btn:hover{background-color : #778899;}
+	.userPassword, .userPasswordOK, .userEmail, .userName, .userBirth{width:98%;}
+	.userPhone{width:100px;}
+	.reception{}
+	.spango{padding-bottom: 15px;}
+	.ddddd{height: 18px;}
+	.ddd{height: 18px;}
+	.subclass{margin-top: 20px;height: 50px;}
+	.join_sub, .back_button{width: 100px; height:50px; background-color:  #B0C4DE; color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+	.join_sub:hover, .back_button:hover{background-color:#778899;}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MemberDAO">
+	
+	<insert id="join" parameterType="member">
+		INSERT INTO userBoard(userId, userPassword, userNickName, userPhoneNumber, userEmail, isMailReceptionChecked, isPhoneReceptionChecked, userName, userBirth) value(#{userId},#{userPassword},#{userNickName},#{userPhoneNumber},#{userEmail},#{isMailReceptionChecked},#{isPhoneReceptionChecked},#{userName},#{userBirth})
+	</insert>
+	
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		SELECT count(*) FROM userBoard WHERE userId = #{idCheck}
+	</select>
+	
+	<select id="NickNameCheck">
+		SELECT count(*) FROM userBoard WHERE userNickName = #{NickNameCheck}
+	</select>
+	
+	<select id="login" resultType="member">
+		SELECT * FROM userBoard WHERE userId = #{userId} and userPassword = #{userPassword}
+	</select>
+	
+	<update id="modify">
+		UPDATE userBoard SET userName = #{userName}, userEmail = #{userEmail}, userPhoneNumber = #{userPhoneNumber} where userId = #{userId}
+	</update>
+	
+	<update id="password">
+		UPDATE userBoard SET userPassword = #{userPassword} where userId = #{userId}
+	</update>
+	
+	<delete id="WithdrawalOK">
+		DELETE FROM userBoard where userId = #{userId}
+	</delete>
+	
+	<select id="FreeBoard" resultType="board">
+		SELECT * FROM freeboard order by num DESC
+	</select>
+	
+	<select id="ReplyBoard" resultType="Integer">
+		SELECT COUNT(*) FROM reply WHERE num = #{num}
+	</select>
+	
+	<select id="TodayBoard" resultType="board">
+		SELECT * FROM freeboard order by hit desc
+	</select>
+	
+	<select id="NoticeBoard" resultType="board">
+		SELECT * FROM noticeboard where category = '소식' or category = '공지' order by num DESC
+	</select>
+	
+	<select id="BugBoard" resultType="board">
+		SELECT * FROM noticeboard where category = '버그제보' order by num DESC
+	</select>
+	
+	<select id="EventBoard" resultType="board">
+		SELECT * FROM noticeboard where category = '이벤트' order by num DESC
+	</select>
+	
+	<select id="NoticeReplyBoard" resultType="Integer">
+		SELECT COUNT(*) FROM noticereply WHERE num = #{num}
+	</select>
+	
+	<select id="AllBoard" resultType="board">
+		SELECT * FROM warriorboard order by num DESC
+	</select>
+	
+	<select id="WarriorBoard" resultType="board">
+		SELECT * FROM warriorboard where category = '전사' order by num DESC
+	</select>
+	
+	<select id="WizardBoard" resultType="board">
+		SELECT * FROM warriorboard where category = '마법사' order by num DESC
+	</select>
+	
+	<select id="ArcherBoard" resultType="board">
+		SELECT * FROM warriorboard where category = '궁수' order by num DESC
+	</select>
+	
+	<select id="BanditBoard" resultType="board">
+		SELECT * FROM warriorboard where category = '도적' order by num DESC
+	</select>
+	
+	<select id="PirateBoard" resultType="board">
+		SELECT * FROM warriorboard where category = '해적' order by num DESC
+	</select>
+	
+	<select id="WarriorReplyBoard" resultType="Integer">
+		SELECT COUNT(*) FROM warriorreply WHERE num = #{num}
+	</select>
+	
+	<select id="idpasswordFind" resultType="String">
+		SELECT userId FROM userBoard where userName = #{userName} and userBirth = #{userBirth} and userEmail = #{userEmail} and userPhoneNumber = #{userPhoneNumber}
+	</select>
+	
+	<update id="passwordOK">
+		UPDATE userBoard SET userPassword = #{userPassword} where userId = #{userId}
+	</update>
+
+	<insert id="NoteWrite">
+		INSERT INTO notebox(userNickName, tosendNickName, title, content) value(#{userNickName},#{tosendNickName}, #{title}, #{content})
+	</insert>
+	
+	<select id="SendNote" resultType="note">
+		SELECT * FROM notebox WHERE tosendNickName = #{userNickName} and (cases = 1 or cases= 2) order by num desc
+	</select>
+	
+	<select id="WriteNote" resultType="note">
+		SELECT * FROM notebox WHERE userNickName = #{userNickName} and (cases = 1 or cases= 3) order by num desc
+	</select>
+	
+	<select id="NoteContentView" resultType="note">
+		SELECT * FROM notebox WHERE num = #{num};
+	</select>
+	
+	<delete id="DeleteItems">
+		DELETE FROM notebox WHERE num = #{num};
+	</delete>
+	
+	<select id="SelectQNA" resultType="qna">
+		SELECT * FROM qna WHERE userNickName = #{userNickName} order by num desc
+	</select>
+
+	<insert id="InsertQNA">
+		INSERT INTO qna(userNickName, QNARadio, content) values(#{userNickName},#{QNARadio},#{content})
+	</insert>	
+	
+	<select id="QNA_Content_View" resultType="qna">
+		SELECT * FROM qna WHERE num = #{num}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

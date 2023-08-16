@@ -1,0 +1,38 @@
+@charset "UTF-8";
+	
+	.container{width:650px; height: 450px; border:1px solid gray; margin-left: 10px; margin-top:10px; }
+	.container ul{display:flex; background-color: #cbcaca; margin : 3px; border-radius: 10px;}
+	.container ul li{list-style-type : none; padding:10px; width: 210px; text-align: left;}
+	.container ul li a{text-decoration: none; color: black;}
+	.container ul li a span{background-color: #dedcdc; padding: 8px; border-radius : 5px;}
+	
+	#span1{background-color : white;}
+	#menu2{display: none;}
+	#menu3{display: none;}
+	#menu1, #menu2, #menu3{margin: 20px;}
+	
+	.menu1_box{display: flex; font-size: 14px;}
+	.menu1_imo{width: 30px;}
+	.menu1_text{width:570px;}
+	.menu1_div{margin-top: 15px; width: 600px; height: 320px;}
+	.menu1_table{ width: 95%; height: 200px; margin: 10px; }
+	.menu1_table td{border: 1px solid #DDD; border-radius : 10px;}
+	.menu1_header{height: 30px;}
+	.table_sub{margin-left: 15px;}
+	.table_sub button{width:100px; height: 40px; background-color: #B0C4DE; color: white; border: none; border-radius: 3px; font-weight: bold; font-size: 15px; cursor: pointer;}
+	.table_sub button:hover{background-color : #778899;}
+	.userName, .userEmail, .userPhoneNumber{height: 90%; width:98%; font-size: 16px; border: none;}
+	.label_first_id{width:180px}
+	.label_second_id{font-size: 18px; }
+	
+	.menu2_box{display: flex; font-size: 14px;}
+	.menu2_content_box{font-size: 13px; margin-top: 20px;}
+	.menu2_table_div{margin-top: 20px;}
+	.menu2_table{width: 95%; height: 100px; margin: 10px;}
+	.menu2_table td{border: 1px solid #DDD; border-radius : 10px;}
+	.userPassword, .userPasswordOK{height: 90%; width:98%; font-size: 16px; border: none;}
+	
+	.menu3_box{display: flex; font-size: 14px;}
+	.menu3_content_p{font-size: 14px; line-height: 1.6; }	
+ 		
+ 
